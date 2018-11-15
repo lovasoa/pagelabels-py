@@ -45,6 +45,6 @@ print("\n".join(map(str, labels)))
 
 writer = PdfWriter()
 writer.trailer = reader
-outfile = options.outfile or (options.file.parent / (options.file.stem + '_new_page_labels' + options.file.suffix))
+outfile = options.outfile or options.file
 writer.write(str(outfile.resolve()))
 print("Resulting pdf file created : {}".format(outfile))
