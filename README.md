@@ -76,3 +76,6 @@ optional arguments:
 $ ./addpagelabels.py --delete
 ```
 
+## Usage as a python library
+This project can be used as a python library.
+See [*pagelabels* on the python package index](https://pypi.org/project/pagelabels/).
