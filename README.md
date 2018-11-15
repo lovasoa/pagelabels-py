@@ -93,10 +93,10 @@ Let's say we have a PDF named `my_document.pdf`, that has 12 pages.
 We can issue the following list of commands:
 
 ```bash
-./addpagelabels.py --delete --outfile "my_document.pdf" "my_document.pdf"
-./addpagelabels.py --startpage 1 --prefix "Intro " --type "roman uppercase" --outfile "my_document.pdf" "my_document.pdf"
-./addpagelabels.py --startpage 5 --firstpagenum 2 --outfile "my_document.pdf" "my_document.pdf"
-./addpagelabels.py --startpage 10 --prefix "Appendix " --type "letters uppercase" --outfile "my_document.pdf" "my_document.pdf"
+./addpagelabels.py --delete "my_document.pdf"
+./addpagelabels.py --startpage 1 --prefix "Intro " --type "roman uppercase" "my_document.pdf"
+./addpagelabels.py --startpage 5 --firstpagenum 2 "my_document.pdf"
+./addpagelabels.py --startpage 10 --prefix "Appendix " --type "letters uppercase" "my_document.pdf"
 ```
 
 ## Usage as a python library
