@@ -81,7 +81,22 @@ optional arguments:
 
 #### Delete existing page labels from a PDF
 ```
-$ ./addpagelabels.py --delete
+$ ./addpagelabels.py --delete file.pdf
+```
+
+### Complete example
+Let's say we have a PDF named `my_document.pdf`, that has 12 pages.
+ * Pages 1 to 4 should be labelled `Intro I` to `Intro IV`.
+ * Pages 5 to 9 should be labelled `2` to `6`.
+ * Pages 10 to 12 should be labelled `Appendix A` to `Appendix C`.
+
+We can issue the following list of commands:
+
+```bash
+./addpagelabels.py --delete --outfile "my_document.pdf" "my_document.pdf"
+./addpagelabels.py --startpage 1 --prefix "Intro " --type "roman uppercase" --outfile "my_document.pdf" "my_document.pdf"
+./addpagelabels.py --startpage 5 --firstpagenum 2 --outfile "my_document.pdf" "my_document.pdf"
+./addpagelabels.py --startpage 10 --prefix "Appendix " --type "letters uppercase" --outfile "my_document.pdf" "my_document.pdf"
 ```
 
 ## Usage as a python library
