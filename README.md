@@ -1,5 +1,13 @@
 # pagelabels
-Python library to manipulate PDF page labels
+Python utility to manipulate PDF page labels.
+
+A useful but rarely-used feature of PDFs is the ability to use
+custom naming schemes for pages. This allows to start a PDF at
+any given page number instead of 1, to restart page numbering 
+for each section of a long PDF, or to attribute a certain name
+to a given page.
+
+![Example page labels generated with pagelabels and viewed in evince](https://user-images.githubusercontent.com/552629/48559767-88368380-e8ec-11e8-827c-068c1d34c588.png)
 
 ## Addpagelabels utility
 ### Installation
