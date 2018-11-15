@@ -42,8 +42,9 @@ $ ./addpagelabels.py -h
 This should print:
 ```
 usage: addpagelabels.py [-h] [--delete] [--startpage STARTPAGE]
-                        [--type {letters lowercase,roman lowercase,letters uppercase,arabic,roman uppercase}]
+                        [--type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}]
                         [--prefix PREFIX] [--firstpagenum FIRSTPAGENUM]
+                        [--outfile out.pdf]
                         file.pdf
 
 Add page labels to a PDF file
@@ -57,13 +58,15 @@ optional arguments:
   --startpage STARTPAGE, -s STARTPAGE
                         the index (starting from 1) of the page of the PDF
                         where the labels will start
-  --type {letters lowercase,roman lowercase,letters uppercase,arabic,roman uppercase}, -t {letters lowercase,roman lowercase,letters uppercase,arabic,roman uppercase}
+  --type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}, -t {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}
                         type of numbers: arabic = 1, 2, 3, roman = i, ii, iii,
                         iv, letters = a, b, c
   --prefix PREFIX, -p PREFIX
                         prefix to the page labels
   --firstpagenum FIRSTPAGENUM, -f FIRSTPAGENUM
                         number to attribute to the first page of this index
+  --outfile out.pdf, -o out.pdf
+                        Where to write the output file
 ```
 
 #### Delete existing page labels from a PDF
