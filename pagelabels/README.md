@@ -43,5 +43,5 @@ labels.append(newlabel) # Adding our page labels to the existing ones
 labels.write(reader)
 writer = PdfWriter()
 writer.trailer = reader
-writer.write("optput.pdf")
+writer.write("output.pdf")
 ```
