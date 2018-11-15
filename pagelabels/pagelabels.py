@@ -21,13 +21,13 @@ class PageLabels(list):
         """Sort the pagelabels, remove duplicate entries,
         and if pegenum is set remove entries that have a startpage >= pagenum"""
         # Remove duplicates
-        pagenums = dict()
+        page_nums = dict()
         for elem in self[:]:
-            oldelem = pagenums.get(elem.startpage)
-            if oldelem != None or elem.startpage >= pagenum:
+            oldelem = page_nums.get(elem.startpage)
+            if oldelem is not None or elem.startpage >= pagenum:
                 self.remove(oldelem)
             else:
-                pagenums[elem.startpage] = elem
+                page_nums[elem.startpage] = elem
         self.sort()
         if len(self) == 0 or self[0].startpage != 0:
             self.insert(0, PageLabelScheme(0))
