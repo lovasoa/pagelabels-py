@@ -1,14 +1,16 @@
 #!/usr/bin/env python3
 
-from pagelabels import PageLabels, PageLabelScheme
-from pdfrw import PdfReader, PdfWriter
 import argparse
+
+from pdfrw import PdfReader, PdfWriter
+
+from pagelabels import PageLabels, PageLabelScheme
 
 parser = argparse.ArgumentParser(description='Add page labels to a PDF file')
 parser.add_argument('file', type=PdfReader, metavar="file.pdf",
-                   help='the PDF file to edit')
+                    help='the PDF file to edit')
 parser.add_argument('--delete', action='store_true',
-                   help='delete the existing page labels')
+                    help='delete the existing page labels')
 parser.add_argument('--startpage', '-s', type=int, default=1,
                     help="the index (starting from 1) of the page of the PDF where the labels will start")
 parser.add_argument('--type', "-t", default="arabic", choices=PageLabelScheme.styles(),
@@ -27,10 +29,10 @@ if options.delete:
     labels = PageLabels()
 else:
     labels = PageLabels.from_pdf(reader)
-    newlabel = PageLabelScheme(startpage    = options.startpage-1,
-                               style        = options.type,
-                               prefix       = options.prefix,
-                               firstpagenum = options.firstpagenum)
+    newlabel = PageLabelScheme(startpage=options.startpage - 1,
+                               style=options.type,
+                               prefix=options.prefix,
+                               firstpagenum=options.firstpagenum)
     labels.append(newlabel)
 # Write the new page labels to the PDF
 labels.write(reader)

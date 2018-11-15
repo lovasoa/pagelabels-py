@@ -1,6 +1,8 @@
 #!/usr/bin/env python3
-from . import PageLabelScheme
 from pdfrw import PdfName, PdfDict, PdfArray
+
+from . import PageLabelScheme
+
 
 class PageLabels(list):
     @classmethod
@@ -8,10 +10,11 @@ class PageLabels(list):
         """Create a PageLabels object by reading the page labels of
         the given PdfReader object"""
         labels = pdf.Root.PageLabels
-        if not labels: return cls([])
+        if not labels:
+            return cls([])
         nums = labels.Nums
-        parsed = (PageLabelScheme.from_pdf(nums[i], nums[i+1])
-                    for i in range(0, len(nums), 2))
+        parsed = (PageLabelScheme.from_pdf(nums[i], nums[i + 1])
+                  for i in range(0, len(nums), 2))
         return cls(parsed)
 
     def normalize(self, pagenum=float("inf")):
@@ -32,9 +35,9 @@ class PageLabels(list):
     def pdfdict(self):
         """Return a PageLabel entry to pe inserted in the root of a PdfReader object"""
         nums = (i for label in sorted(self)
-                    for i in label.pdfobjs())
+                for i in label.pdfobjs())
         return PdfDict(Type=PdfName("Catalog"),
-                       Nums = PdfArray(nums))
+                       Nums=PdfArray(nums))
 
     def write_raw(self, pdf):
         """Write the PageLabels to a PdfReader object without sanity checks
