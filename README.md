@@ -29,7 +29,7 @@ $ sudo apt install python3-pip
 ##### On MacOS
 Install [brew](https://brew.sh/), and then install python:
 
-````bash
+```bash
 brew install python
 ```
 
@@ -40,7 +40,7 @@ and then follow the linux instructions.
 #### The script
 Install **pagelabels-py** :
 ```
-$ pip3 install --user --upgrade pagelabels 
+python3 -m pip install --user --upgrade pagelabels 
 ```
 
 ### How to use
@@ -55,12 +55,12 @@ and starting from "V".
 
 Page numbers will be: "Intro V", "Intro VI", "Intro VII", ...
 ```
-$ python3 -m pagelabels --startpage 1 --type "roman uppercase" --prefix "Intro " --firstpagenum 5 --outfile /tmp/new.pdf /tmp/test.pdf
+python3 -m pagelabels --startpage 1 --type "roman uppercase" --prefix "Intro " --firstpagenum 5 --outfile /tmp/new.pdf /tmp/test.pdf
 ```
 
 #### Print usage info
 ```
-$ python3 -m pagelabels -h
+python3 -m pagelabels -h
 ```
 
 This should print:
@@ -97,7 +97,7 @@ optional arguments:
 
 #### Delete existing page labels from a PDF
 ```
-$ python3 -m pagelabels --delete file.pdf
+python3 -m pagelabels --delete file.pdf
 ```
 
 ### Complete example: creating a PDF with several different page numbering styles
