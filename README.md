@@ -126,6 +126,10 @@ python3 -m pagelabels --update --prefix "EX-" my_document.pdf
 
 This will update the existing labels to EX-10, EX-11, EX-12, EX-A, EX-B, EX-C.
 
+## Warning
+*pagelabels-py* internally uses [pdfrw](https://github.com/pmaupin/pdfrw), that can write only [**PDF version 1.3**](https://en.wikipedia.org/wiki/History_of_the_Portable_Document_Format_(PDF)). If your PDF uses features that are not compatible with PDF 1.3, you may see it not being rendered correctly after using *pagelabels-py*.
+
 ## Usage as a python library
 This project can be used as a python library.
 See [*pagelabels* on the python package index](https://pypi.org/project/pagelabels/).
+
