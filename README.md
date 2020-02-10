@@ -69,6 +69,7 @@ usage: pagelabels [-h] [--outfile out.pdf] [--delete | --update]
                   [--startpage STARTPAGE]
                   [--type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}]
                   [--prefix PREFIX] [--firstpagenum FIRSTPAGENUM]
+                  [--load other.pdf]
                   file.pdf
 
 Add page labels to a PDF file
@@ -93,6 +94,7 @@ optional arguments:
                         prefix to the page labels
   --firstpagenum FIRSTPAGENUM, -f FIRSTPAGENUM
                         number to attribute to the first page of this index
+  --load other.pdf      copy page number information from the given PDF file
 ```
 
 #### Delete existing page labels from a PDF
