@@ -32,11 +32,16 @@ parser.add_argument("--prefix", "-p",
                     help="prefix to the page labels")
 parser.add_argument("--firstpagenum", "-f", type=int, default=1,
                     help="number to attribute to the first page of this index")
+parser.add_argument('--load', type=Path, metavar='other.pdf',
+                    help='copy page number information from the given PDF file')
 options = parser.parse_args()
 
 reader = PdfReader(str(options.file.resolve()))
 
-if options.delete:
+if options.load:
+    other = PdfReader(str(options.load.resolve()))
+    labels = PageLabels.from_pdf(other)
+elif options.delete:
     labels = PageLabels()
 elif options.update:
     labels = PageLabels(

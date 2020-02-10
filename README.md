@@ -100,6 +100,13 @@ optional arguments:
 python3 -m pagelabels --delete file.pdf
 ```
 
+#### Copy page labels from one PDF to another
+The following will take the page labelling scheme from `source.pdf` and 
+apply it to `target.pdf` :
+```
+python3 -m pagelabels --load source.pdf target.pdf
+```
+
 ### Complete example: creating a PDF with several different page numbering styles
 Let's say we have a PDF named `my_document.pdf`, that has 12 pages.
  * Pages 1 to 4 should be labelled `Intro I` to `Intro IV`.
