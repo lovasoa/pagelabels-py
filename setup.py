@@ -1,6 +1,6 @@
 from setuptools import setup, find_packages
 
-VERSION = '1.1.1'
+VERSION = '1.2.0'
 
 CLASSIFIERS = [
     'Development Status :: 5 - Production/Stable',
