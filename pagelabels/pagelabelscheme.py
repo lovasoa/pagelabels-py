@@ -11,7 +11,8 @@ styles = {"arabic": PdfName('D'),
           "roman lowercase": PdfName('r'),
           "roman uppercase": PdfName('R'),
           "letters lowercase": PdfName('a'),
-          "letters uppercase": PdfName('A')}
+          "letters uppercase": PdfName('A'),
+          "none", None}
 stylecodes = {v: a for a, v in styles.items()}
 
 
