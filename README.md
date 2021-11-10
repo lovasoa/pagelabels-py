@@ -67,7 +67,7 @@ This should print:
 ```
 usage: pagelabels [-h] [--outfile out.pdf] [--delete | --update]
                   [--startpage STARTPAGE]
-                  [--type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}]
+                  [--type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase,none}]
                   [--prefix PREFIX] [--firstpagenum FIRSTPAGENUM]
                   [--load other.pdf]
                   file.pdf
@@ -87,9 +87,9 @@ optional arguments:
   --startpage STARTPAGE, -s STARTPAGE
                         the index (starting from 1) of the page of the PDF
                         where the labels will start
-  --type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}, -t {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase}
+  --type {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase,none}, -t {arabic,roman lowercase,roman uppercase,letters lowercase,letters uppercase,none}
                         type of numbers: arabic = 1, 2, 3, roman = i, ii, iii,
-                        iv, letters = a, b, c
+                        iv, letters = a, b, c, none =  (number is empty)
   --prefix PREFIX, -p PREFIX
                         prefix to the page labels
   --firstpagenum FIRSTPAGENUM, -f FIRSTPAGENUM
